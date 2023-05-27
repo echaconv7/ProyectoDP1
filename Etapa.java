@@ -82,5 +82,4 @@ public class Etapa
     public String toString(){
         return "<etapa: " + nombre + "> <dificultad:" + dificultad + "> <distancia: " + distancia + ")>";
     }
-    /**Hola*/
 }
