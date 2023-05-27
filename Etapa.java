@@ -17,7 +17,7 @@ public class Etapa
      * @param distancia int son los kilometros a realizar en el recorrido 
      * de la Etapa
      */
-    public Etapa()
+    public Etapa(String nombre, double dificultad, int distancia)
     {
         this.nombre = nombre;
         this.dificultad = dificultad;

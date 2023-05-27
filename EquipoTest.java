@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
 /**
  * The test class EquipoTest.
  *
- * @author  (your name)
+ * @author  Andres Leo y Elena Chacon
  * @version (a version number or a date)
  */
 public class EquipoTest

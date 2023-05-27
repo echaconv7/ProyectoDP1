@@ -4,7 +4,7 @@ import java.util.Comparator;
  * Compara y ordena el tiempo total de 2 Ciclistas, por orden descendente
  * y en caso de empate ordena por el nombre.
  * 
- * @author Victor Navareño
+ * @author Andres Leo y Elena Chacon
  * @version 1
  */
 public class ComparadorTiempoTotalCiclista implements Comparator<Ciclista>{

@@ -4,7 +4,7 @@ import java.util.Comparator;
  * Compara y ordena por la dificultad de 2 Etapas, en orden descendente,
  * y en caso de empate ordena por el nombre.
  * 
- * @author Victor
+ * @author Andres Leo y Elena Chacon
  * @version 15.10
  */
 class ComparadorDificultadEtapa implements Comparator<Etapa>{
