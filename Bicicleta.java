@@ -9,15 +9,15 @@ public class Bicicleta
 {
     // definicion de campos de la clase Bicicleta
     private String nombre;
-    private double peso;
+    private Peso peso;
     
     /**
      *  Constructor parametrizado de Bicicleta
      */
-    public Bicicleta(String nombre, double peso)
+    public Bicicleta(String nombre, Peso peso)
     {
         this.nombre = nombre;
-        this.peso = peso;
+        setPeso(peso);
     }
     
     //MÉTODOS MODIFICADORES (set)
@@ -25,7 +25,7 @@ public class Bicicleta
      * Asigna el nombre de la bicicleta
      * @param String nombreBici 
      */
-    void setNombre(String nombre){
+    public void setNombre(String nombre){
         this.nombre = nombre;
     }
     
@@ -33,7 +33,7 @@ public class Bicicleta
      * Asigna el peso de la bicicleta
      * @param double pesoBici
      */
-    void setPeso(double peso){
+    public void setPeso(Peso peso){
         this.peso = peso;
     }
    
@@ -42,16 +42,24 @@ public class Bicicleta
      * Devuelve el nombre de la Bicicleta
      * @return String con el nombre de la bicicleta
      */
-    String getNombre(){
-        return this.nombre;
+    public String getNombre(){
+        return nombre;
     }
 
     /**
-     * Devuelve el peso de la Bicicleta
+     * Devuelve el nombre del peso de la Bicicleta
      * @return double peso
      */
-    double getPeso(){
-        return this.peso;
+    public Peso getPeso(){
+        return peso;
+    }
+    
+    /**
+     * Devuelve el valor peso
+     * @return Double con la dificultad del recorrido
+     */
+    public double getValorPeso (){
+        return peso.getValorPes();
     }
     
     
@@ -61,7 +69,7 @@ public class Bicicleta
      * @return devuelve las características de una Bicicleta
      */    
     public String toString (){
-        return "<bicicleta: " + nombre + "> <peso: " + peso + ")>";
+        return "<bicicleta: " + nombre + "> <peso: " + getPeso() + "(Valor: " + getValorPeso() + ")>";
     }
     
     /**
@@ -73,7 +81,7 @@ public class Bicicleta
      */
     public double calcularVelocidad(double habilidadCiclista, double dificultadEtapa)
     {
-        double velocidad = (habilidadCiclista * 100) / (peso * dificultadEtapa);
+        double velocidad = (habilidadCiclista * 100) / (getValorPeso() * dificultadEtapa);
         return velocidad;
     }
     

@@ -9,9 +9,9 @@ import java.util.Comparator;
  */
 class ComparadorDificultadEtapa implements Comparator<Etapa>{
     public int compare(Etapa etapa1, Etapa etapa2){
-            if (etapa1.getDificultad() > etapa2.getDificultad())
+            if (etapa1.getValorDificultad() > etapa2.getValorDificultad())
             return 1;
-        else if (etapa1.getDificultad() < etapa2.getDificultad())
+        else if (etapa1.getValorDificultad() < etapa2.getValorDificultad())
             return -1;
             
         //DESEMPATE: ORDENAMOS POR NOMBRE (función .compareTo() especial Strings)

@@ -7,8 +7,8 @@
 public class Etapa
 {
     private String nombre;
-    private double dificultad;
-    private int distancia;
+    private Dificultad dificultad;
+    private Distancia distancia;
 
     /**
      * Constructor for objects of class Etapa
@@ -17,11 +17,11 @@ public class Etapa
      * @param distancia int son los kilometros a realizar en el recorrido 
      * de la Etapa
      */
-    public Etapa(String nombre, double dificultad, int distancia)
+    public Etapa(String nombre, Dificultad dificultad, Distancia distancia)
     {
         this.nombre = nombre;
-        this.dificultad = dificultad;
-        this.distancia = distancia;
+        setDificultad(dificultad);
+        setDistancia(distancia);
     }
 
     //Metodos modificadores (set)
@@ -33,11 +33,12 @@ public class Etapa
     {
         this.nombre = nombre;
     }
+    
      /**
      * Asigna la dificultad
      * @param dificultad Double que especifica la dificultad de la etapa
      */
-    public void setDificultad (double dificultad){
+    public void setDificultad (Dificultad dificultad){
         this.dificultad = dificultad;
     }
     
@@ -45,7 +46,7 @@ public class Etapa
      * Asigna la distancia
      * @param Int distancia Int que especifica la distancia de la etapa
      */
-    public void setDistancia (int distancia){
+    public void setDistancia (Distancia distancia){
         this.distancia = distancia;
     }
     
@@ -63,16 +64,32 @@ public class Etapa
      * Devuelve la dificultad
      * @return Double con la dificultad del recorrido
      */
-    public double getDificultad (){
+    public Dificultad getDificultad (){
         return dificultad;
     }
     
     /**
+     * Devuelve el valor dificultad
+     * @return Double con la dificultad del recorrido
+     */
+    public double getValorDificultad (){
+        return dificultad.getValorDif();
+    }
+    
+    /**
      * Devuelve la distancia
+     * @return Double con la dificultad del recorrido
+     */
+    public Distancia getDistancia (){
+        return distancia;
+    }
+    
+    /**
+     * Devuelve el valor distancia
      * @return Int con la distancia recorrida en la etapa
      */
-    public int getDistancia () {
-        return distancia;
+    public int getValorDistancia () {
+        return distancia.getValorDis();
     }
     
     /**
@@ -80,6 +97,6 @@ public class Etapa
      * @return String que muestra las caracteristicas de la etapa
      */
     public String toString(){
-        return "<etapa: " + nombre + "> <dificultad:" + dificultad + "> <distancia: " + distancia + ")>";
+        return "<etapa: " + nombre + "> <dificultad: " + getDificultad() + "(valor: " + getValorDificultad() + ")> <distancia: " + getDistancia() + "(valor: " + getValorDistancia() + ")>";
     }
 }

@@ -197,7 +197,7 @@ public class Organizacion
                     double tiempoHastaAbandono; // PARA ALMACENAR LA ENERGIA DE LA CARRERA ANTERIOR, QUE COINCIDIRÁ CON EL TIEMPO QUE INVIERTE EN QUEDARSE SIN ENERGIA EN LA SIGUIENTE
                     tiempoHastaAbandono = ciclistasCarrera.get(j).getEnergia();
                     System.out.println(ciclistasCarrera.get(j).getBicicleta().toString() + ")> en etapa " + etapas.get(i).getNombre());
-                    System.out.println("+++ Con estas condiciones el ciclista " + ciclistasCarrera.get(j).getNombre() + " con la bicicleta " + ciclistasCarrera.get(j).getBicicleta().getNombre() + " alcanza una velocidadad de " + Math.round(ciclistasCarrera.get(j).getBicicleta().calcularVelocidad(ciclistasCarrera.get(j).getHabilidad(), etapas.get(i).getDificultad())*100.0)/100.0 + " km/hora +++");
+                    System.out.println("+++ Con estas condiciones el ciclista " + ciclistasCarrera.get(j).getNombre() + " con la bicicleta " + ciclistasCarrera.get(j).getBicicleta().getNombre() + " alcanza una velocidadad de " + Math.round(ciclistasCarrera.get(j).getBicicleta().calcularVelocidad(ciclistasCarrera.get(j).getHabilidad(), etapas.get(i).getValorDificultad())*100.0)/100.0 + " km/hora +++");
                     ciclistasCarrera.get(j).hacerCarrera(etapas.get(i)); //GUARDO EN EL ARRAY RESULTADOS DEL CICLISTA
 
                     if(ciclistasCarrera.get(j).getEnergia()<= 0){
