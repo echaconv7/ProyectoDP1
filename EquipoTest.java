@@ -60,11 +60,11 @@ public class EquipoTest
         ciclista2.hacerCarrera(etapa3);
         ciclista2.hacerCarrera(etapa4);
 
-        double expectedMedia = (ciclista1.calcularTiempoTotal() + ciclista2.calcularTiempoTotal()) / 2;
+        double MediaEsperada = (ciclista1.calcularTiempoTotal() + ciclista2.calcularTiempoTotal()) / 2;
 
-        double actualMedia = EquipoTest1.calcularMediaTiempo();
+        double MediaActual = EquipoTest1.calcularMediaTiempo();
 
-        assertEquals(expectedMedia, actualMedia);
+        assertEquals(MediaEsperada, MediaActual);
     }
     
     
@@ -74,7 +74,7 @@ public class EquipoTest
         assertEquals(ciclista1, actualCiclista);
 
         Ciclista actualCiclista2=new Ciclista (ciclista2.getNombre(), ciclista2.getHabilidad(),ciclista2.getEnergia(), EquipoTest1);
-        assertEquals(ciclista2, actualCiclista);
+        assertEquals(ciclista2, actualCiclista2);
     }
 }
     
