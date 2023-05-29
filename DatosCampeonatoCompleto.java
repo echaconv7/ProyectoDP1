@@ -1,6 +1,5 @@
 public class DatosCampeonatoCompleto
 {
-    
     public DatosCampeonatoCompleto(Organizacion organizacion)
     {
         System.out.println("*********************************************************************************************************");
