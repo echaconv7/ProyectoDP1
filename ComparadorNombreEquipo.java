@@ -3,7 +3,7 @@ import java.util.Comparator;
 /**
  * Compara el nombre de los Equipos, los ordena por orden alfabético.
  * 
- * @author Victor
+ * @author Andres Leo y Elena Chacon
  * @version 15.10
  */
 class ComparadorNombreEquipo implements Comparator<Equipo>{

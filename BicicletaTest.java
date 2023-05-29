@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
 /**
  * The test class BicicletaTest.
  *
- * @author  Victor
+ * @author  Andres Leo y Elena Chacon
  * @version 1
  */
 public class BicicletaTest

@@ -2,7 +2,7 @@
 /**
  * clase Resultado, almacena los resultados obtenidos (tiempo)
  * en cada Etapa que haya disputado y que vaya disputando de la competición.
- * @author Víctor
+ * @author Andres Leo y Elena Chacon
  * @version 1
  */
 public class Resultado

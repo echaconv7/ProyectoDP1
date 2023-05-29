@@ -3,7 +3,7 @@ import java.util.*;
 /**
  * Representa a la clase Organizacion, capaz de gestionar el campeonato.
  * 
- * @author Víctor Navareño
+ * @author Andres Leo y Elena Chacon
  * @version 1
  */
 public class Organizacion

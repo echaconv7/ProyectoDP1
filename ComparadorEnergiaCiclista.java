@@ -4,7 +4,7 @@ import java.util.Comparator;
  * Compara y ordena la energia de 2 Ciclistas, por orden descendente
  * y en caso de empate ordena por el nombre.
  * 
- * @author Victor
+ * @author Andres Leo y Elena Chacon
  * @version 1
  */
 public class ComparadorEnergiaCiclista implements Comparator<Ciclista>{
