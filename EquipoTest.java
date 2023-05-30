@@ -15,6 +15,10 @@ public class EquipoTest
     private Equipo EquipoTest1;
     private Ciclista ciclista1;
     private Ciclista ciclista2;
+    private Etapa etapa1;
+    private Etapa etapa2;
+    private Etapa etapa3;
+    private Etapa etapa4;
     
     /**
      * Default constructor for test class EquipoTest
@@ -31,7 +35,7 @@ public class EquipoTest
     @BeforeEach
     public void setUp()
     {
-        Equipo EquipoTest1 = new Equipo("Movistar Women", new ComparadorPesoBicicleta(), new ComparadorHabilidadCiclista(), false, false);
+        EquipoTest1 = new Equipo("Movistar Women", new ComparadorPesoBicicleta(), new ComparadorHabilidadCiclista(), false, false);
         ciclista1 = new Ciclista("Ciclista 1", 0.8, 100, EquipoTest1);
         ciclista2 = new Ciclista("Ciclista 2", 0.9, 120, EquipoTest1);
     }
@@ -48,10 +52,10 @@ public class EquipoTest
     
     @Test
     public void getMediaMinutosEquipo (){
-        Etapa etapa1 = new Etapa("Etapa 1", Dificultad.SENCILLA, Distancia.INTERMEDIA);
-        Etapa etapa2 = new Etapa("Etapa 2", Dificultad.COMPLEJA, Distancia.LARGA);
-        Etapa etapa3 = new Etapa("Etapa 3", Dificultad.SENCILLA, Distancia.CORTA);
-        Etapa etapa4 = new Etapa("Etapa 4", Dificultad.NORMAL, Distancia.INTERMEDIA);
+        etapa1 = new Etapa("Etapa 1", Dificultad.SENCILLA, Distancia.INTERMEDIA);
+        etapa2 = new Etapa("Etapa 2", Dificultad.COMPLEJA, Distancia.LARGA);
+        etapa3 = new Etapa("Etapa 3", Dificultad.SENCILLA, Distancia.CORTA);
+        etapa4 = new Etapa("Etapa 4", Dificultad.NORMAL, Distancia.INTERMEDIA);
 
         ciclista1.hacerCarrera(etapa1);
         ciclista1.hacerCarrera(etapa2);
