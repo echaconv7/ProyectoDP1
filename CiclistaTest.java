@@ -33,7 +33,7 @@ public class CiclistaTest
     public void setUp()
     {
         Equipo dSMWomen = new Equipo("DSM Women", new ComparadorPesoBicicleta(), new ComparadorEnergiaCiclista(), false, false);
-        CiclistaTest1= new Ciclista ("WIEBES",  4.97, 1190,dSMWomen);
+        CiclistaTest1= new Ciclista ("WIEBES",  Habilidad.LENTA, 1190,dSMWomen);
         Etapa etapa1= new Etapa("Etapa 1", Dificultad.SENCILLA, Distancia.CORTA);
         Etapa etapa2= new Etapa("Etapa 2", Dificultad.NORMAL, Distancia.LARGA);
     }

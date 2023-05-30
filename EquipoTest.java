@@ -36,8 +36,8 @@ public class EquipoTest
     public void setUp()
     {
         EquipoTest1 = new Equipo("Movistar Women", new ComparadorPesoBicicleta(), new ComparadorHabilidadCiclista(), false, false);
-        ciclista1 = new Ciclista("Ciclista 1", 0.8, 100, EquipoTest1);
-        ciclista2 = new Ciclista("Ciclista 2", 0.9, 120, EquipoTest1);
+        ciclista1 = new Ciclista("Ciclista 1", Habilidad.NORMAL, 100, EquipoTest1);
+        ciclista2 = new Ciclista("Ciclista 2", Habilidad.BUENA, 120, EquipoTest1);
     }
 
     /**
@@ -74,10 +74,10 @@ public class EquipoTest
     
     @Test
     public void enviarSiguienteCiclista (){
-        Ciclista actualCiclista1=new Ciclista (ciclista1.getNombre(), ciclista1.getHabilidad(),ciclista1.getEnergia(), EquipoTest1);
+        Ciclista actualCiclista1=new Ciclista (ciclista1.getNombre(), ciclista1.getHab(),ciclista1.getEnergia(), EquipoTest1);
         assertEquals(ciclista1, actualCiclista1);
 
-        Ciclista actualCiclista2=new Ciclista (ciclista2.getNombre(), ciclista2.getHabilidad(),ciclista2.getEnergia(), EquipoTest1);
+        Ciclista actualCiclista2=new Ciclista (ciclista2.getNombre(), ciclista2.getHab(),ciclista2.getEnergia(), EquipoTest1);
         assertEquals(ciclista2, actualCiclista2);
     }
 }
