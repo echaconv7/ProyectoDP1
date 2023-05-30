@@ -7,7 +7,7 @@
  */
 public enum Peso
 {
-    LIGERA ("PESADA",7.35),
+    LIGERA ("LIGERA",7.35),
     NORMAL ("NORMAL",7.50),
     PESADA ("PESADA",7.85);
     

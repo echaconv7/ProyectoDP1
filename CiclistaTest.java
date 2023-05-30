@@ -34,8 +34,8 @@ public class CiclistaTest
     {
         Equipo dSMWomen = new Equipo("DSM Women", new ComparadorPesoBicicleta(), new ComparadorEnergiaCiclista(), false, false);
         CiclistaTest1= new Ciclista ("WIEBES",  4.97, 1190,dSMWomen);
-        Etapa etapa1= new Etapa("Etapa 1", Dificultad.SENCILLA, 50);
-        Etapa etapa2= new Etapa("Etapa 2", 0.6, 60);
+        Etapa etapa1= new Etapa("Etapa 1", Dificultad.SENCILLA, Distancia.CORTA);
+        Etapa etapa2= new Etapa("Etapa 2", Dificultad.NORMAL, Distancia.LARGA);
     }
 
     /**
@@ -50,11 +50,11 @@ public class CiclistaTest
     
     @Test
     public void correr (Etapa etapa){
-        Bicicleta bicicleta = new Bicicleta ("Bicicleta1", 10);
+        Bicicleta bicicleta = new Bicicleta ("Bicicleta1", Peso.LIGERA);
         CiclistaTest1.setBicicleta (bicicleta);
         
-        double velocidadEsperada=bicicleta.calcularVelocidad (CiclistaTest1.getHabilidad(), etapa1.getDificultad());
-        double tiempoEsperado = bicicleta.calcularTiempo (etapa.getDistancia(), velocidadEsperada);
+        double velocidadEsperada=bicicleta.calcularVelocidad (CiclistaTest1.getHabilidad(), etapa1.getValorDificultad());
+        double tiempoEsperado = bicicleta.calcularTiempo (etapa.getValorDistancia(), velocidadEsperada);
         
         assertEquals (71, velocidadEsperada, 0.5);
         assertEquals (42.25, tiempoEsperado, 0.5);

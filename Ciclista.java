@@ -284,7 +284,7 @@ public class Ciclista
      * 
      */
     public void actualizarEnergia(Etapa etapa){
-        energia = energia - bicicleta.calcularTiempo(etapa.getDistancia(),bicicleta.calcularVelocidad(this.habilidad, etapa.getDificultad()));
+        energia = energia - bicicleta.calcularTiempo(etapa.getValorDistancia(),bicicleta.calcularVelocidad(this.habilidad, etapa.getValorDificultad()));
         setEnergia(energia);
     }
     
@@ -295,8 +295,8 @@ public class Ciclista
      * @param Etapa en la que participa
      */
     public void hacerCarrera(Etapa etapa){
-        double velocidadBicicleta = bicicleta.calcularVelocidad(this.habilidad, etapa.getDificultad()); // CALCULO LA VELOCIDAD QUE ALCANZARÁ EL CICLISTA PARA ESTA ETAPA CON LA BICICLETA
-        double tiempoCarrera = bicicleta.calcularTiempo(etapa.getDistancia(), velocidadBicicleta); // CALCULO EL TIEMPO QUE TARDARÁ EL CICLISTA CON LA BICICLETA PARA ESA ETAPA
+        double velocidadBicicleta = bicicleta.calcularVelocidad(this.habilidad, etapa.getValorDificultad()); // CALCULO LA VELOCIDAD QUE ALCANZARÁ EL CICLISTA PARA ESTA ETAPA CON LA BICICLETA
+        double tiempoCarrera = bicicleta.calcularTiempo(etapa.getValorDistancia(), velocidadBicicleta); // CALCULO EL TIEMPO QUE TARDARÁ EL CICLISTA CON LA BICICLETA PARA ESA ETAPA
         
         actualizarEnergia(etapa); //CON EL TIEMPO DE LA ETAPA, CALCULO Y ACTUALIZO LA ENERGIA DEL CICLISTA
         actualizarAbandono();

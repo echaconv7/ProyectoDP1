@@ -31,7 +31,7 @@ public class BicicletaTest
     @BeforeEach
     public void setUp()
     {
-        BicicletaTest1 = new Bicicleta("TREK Madone SLR 9 eTap Gen 7", 7.35);
+        BicicletaTest1 = new Bicicleta("TREK Madone SLR 9 eTap Gen 7", Peso.LIGERA);
     }
 
     /**
