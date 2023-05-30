@@ -74,8 +74,8 @@ public class EquipoTest
     
     @Test
     public void enviarSiguienteCiclista (){
-        Ciclista actualCiclista=new Ciclista (ciclista1.getNombre(), ciclista1.getHabilidad(),ciclista1.getEnergia(), EquipoTest1);
-        assertEquals(ciclista1, actualCiclista);
+        Ciclista actualCiclista1=new Ciclista (ciclista1.getNombre(), ciclista1.getHabilidad(),ciclista1.getEnergia(), EquipoTest1);
+        assertEquals(ciclista1, actualCiclista1);
 
         Ciclista actualCiclista2=new Ciclista (ciclista2.getNombre(), ciclista2.getHabilidad(),ciclista2.getEnergia(), EquipoTest1);
         assertEquals(ciclista2, actualCiclista2);

@@ -49,12 +49,12 @@ public class CiclistaTest
     }
     
     @Test
-    public void correr (Etapa etapa){
+    public void correr (Etapa etapa1){
         Bicicleta bicicleta = new Bicicleta ("Bicicleta1", Peso.LIGERA);
         CiclistaTest1.setBicicleta (bicicleta);
         
         double velocidadEsperada=bicicleta.calcularVelocidad (CiclistaTest1.getHabilidad(), etapa1.getValorDificultad());
-        double tiempoEsperado = bicicleta.calcularTiempo (etapa.getValorDistancia(), velocidadEsperada);
+        double tiempoEsperado = bicicleta.calcularTiempo (etapa1.getValorDistancia(), velocidadEsperada);
         
         assertEquals (71, velocidadEsperada, 0.5);
         assertEquals (42.25, tiempoEsperado, 0.5);
