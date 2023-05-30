@@ -12,7 +12,7 @@ public class CiclistaEstrella extends Ciclista
     /**
      * Constructor for objects of class CiclistaEstrella
      */
-    public CiclistaEstrella(String nombre, double habilidad, double energia, Equipo equipo, int SerPopular)
+    public CiclistaEstrella(String nombre, Habilidad habilidad, double energia, Equipo equipo)
     {
         super(nombre, habilidad, energia, equipo);
         this.SerPopular=6;
@@ -22,7 +22,7 @@ public class CiclistaEstrella extends Ciclista
      * Calcula la destreza del ciclista estrella
      */
     public double CalcularDestrezaExp(double habilidad){
-        double destrezaEst = ((habilidad + 6)/140)*10;
+        double destrezaEst = ((getHabilidad() + 6)/140)*10;
         return destrezaEst;
     }
     

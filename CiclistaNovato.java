@@ -11,7 +11,7 @@ public class CiclistaNovato extends Ciclista
     /**
      * Constructor for objects of class CiclistaNovato
      */
-    public CiclistaNovato(String nombre, double habilidad, double energia, Equipo equipo)
+    public CiclistaNovato(String nombre, Habilidad habilidad, double energia, Equipo equipo)
     {
         super(nombre, habilidad, energia, equipo);
     }
@@ -20,7 +20,7 @@ public class CiclistaNovato extends Ciclista
      * Calcula la destreza del ciclista novato
      */
     public double CalcularDestrezaNov(double habilidad){
-        double destrezaNov = ((habilidad + 2)/120)*10;
+        double destrezaNov = ((getHabilidad() + 2)/120)*10;
         return destrezaNov;
     }
 }

@@ -11,7 +11,7 @@ public class CiclistaExperimentado extends Ciclista
     /**
      * Constructor for objects of class CiclistaExperimentado
      */
-    public CiclistaExperimentado(String nombre, double habilidad, double energia, Equipo equipo)
+    public CiclistaExperimentado(String nombre, Habilidad habilidad, double energia, Equipo equipo)
     {
         super(nombre, habilidad, energia, equipo);
     }
@@ -20,7 +20,7 @@ public class CiclistaExperimentado extends Ciclista
      * Calcula la destreza del ciclista experimentado
      */
     public double CalcularDestrezaExp(double habilidad){
-        double destrezaExp = ((habilidad + 4)/130)*10;
+        double destrezaExp = ((getHabilidad() + 4)/130)*10;
         return destrezaExp;
     }
 }
