@@ -48,10 +48,10 @@ public class EquipoTest
     
     @Test
     public void getMediaMinutosEquipo (){
-        Etapa etapa1 = new Etapa("Etapa 1", 10, 1);
-        Etapa etapa2 = new Etapa("Etapa 2", 15, 2);
-        Etapa etapa3 = new Etapa("Etapa 3", 12, 1);
-        Etapa etapa4 = new Etapa("Etapa 4", 18, 3);
+        Etapa etapa1 = new Etapa("Etapa 1", Dificultad.SENCILLA, Distancia.INTERMEDIA);
+        Etapa etapa2 = new Etapa("Etapa 2", Dificultad.COMPLEJA, Distancia.LARGA);
+        Etapa etapa3 = new Etapa("Etapa 3", Dificultad.SENCILLA, Distancia.CORTA);
+        Etapa etapa4 = new Etapa("Etapa 4", Dificultad.NORMAL, Distancia.INTERMEDIA);
 
         ciclista1.hacerCarrera(etapa1);
         ciclista1.hacerCarrera(etapa2);
