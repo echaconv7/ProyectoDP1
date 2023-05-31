@@ -12,6 +12,7 @@ public class Organizacion
     //ESTRUCTURAS DE DATOS IMPLEMENTADAS:
     private List<Equipo> equipos;
     private List<Ciclista> ciclistasCarrera;
+    private Map<Ciclista, String> HashMapCiclistasAbandonados;
     private List<Ciclista> ciclistasAbandonados;
     private Set<Etapa> etapas;
     private List <Etapa> listaDeEtapas; 
@@ -32,6 +33,7 @@ public class Organizacion
     {
         equipos = new ArrayList<Equipo>();
         ciclistasCarrera = new ArrayList<Ciclista>();
+        HashMapCiclistasAbandonados = new HashMap<Ciclista, String>();
         ciclistasAbandonados = new ArrayList<Ciclista>();
         etapas = new TreeSet <Etapa> (new ComparadorDificultadEtapa());
         listaDeEtapas= new ArrayList<Etapa>();
