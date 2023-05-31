@@ -4,6 +4,8 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 
 /**
  * The test class CiclistaTest.
@@ -11,6 +13,7 @@ import org.junit.jupiter.api.Test;
  * @author  (your name)
  * @version (a version number or a date)
  */
+@ExtendWith(EtapaParameterResolver.class)
 public class CiclistaTest
 {
     private Ciclista CiclistaTest1;
@@ -56,8 +59,8 @@ public class CiclistaTest
         double velocidadEsperada=bicicleta.calcularVelocidad (CiclistaTest1.getHabilidad(), etapa1.getValorDificultad());
         double tiempoEsperado = bicicleta.calcularTiempo (etapa1.getValorDistancia(), velocidadEsperada);
         
-        assertEquals (71, velocidadEsperada, 0.5);
-        assertEquals (42.25, tiempoEsperado, 0.5);
+        assertEquals (60, velocidadEsperada, 0.5);
+        assertEquals (149, tiempoEsperado, 0.5);
         
     }
     

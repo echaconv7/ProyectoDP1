@@ -225,11 +225,6 @@ public class Ciclista
         actualizarAbandono();
         double tiempoTotal = 0;
         
-        // if (getAbandonado() == true){    // SI HA ABANDONADO RECORREMOS ARRAY HASTA SIZE -1        
-            // for (int indice = 0; indice < resultados.size(); indice++)
-            // tiempoTotal = tiempoTotal + resultados.get(indice).getTiempo(); // SUMANDO EL TIEMPO DE CADA POSICIÓN
-        // }  
-        // else
             for (int i = 0; i<resultados.size(); i++){
                 tiempoTotal = tiempoTotal + resultados.get(i).getTiempo();
         }     
@@ -255,14 +250,7 @@ public class Ciclista
      * @return boolean estado de asignación de la Bicicleta (true: tiene bicicleta asignada, false: no tiene)
      */
     public boolean tieneBicicleta(){
-        boolean tiene;
-        if(this.bicicleta.equals(null)){
-            tiene = false;
-        }
-        else {
-            tiene = true;
-        }
-        return tiene;
+        return bicicleta != null;
     }
     
     /**
@@ -303,17 +291,34 @@ public class Ciclista
      * @param Etapa en la que participa
      */
     public void hacerCarrera(Etapa etapa){
-        double velocidadBicicleta = bicicleta.calcularVelocidad(getHabilidad(), etapa.getValorDificultad()); // CALCULO LA VELOCIDAD QUE ALCANZARÁ EL CICLISTA PARA ESTA ETAPA CON LA BICICLETA
-        double tiempoCarrera = bicicleta.calcularTiempo(etapa.getValorDistancia(), velocidadBicicleta); // CALCULO EL TIEMPO QUE TARDARÁ EL CICLISTA CON LA BICICLETA PARA ESA ETAPA
+        if(bicicleta != null){
+            double velocidadBicicleta = bicicleta.calcularVelocidad(getHabilidad(), etapa.getValorDificultad()); // CALCULO LA VELOCIDAD QUE ALCANZARÁ EL CICLISTA PARA ESTA ETAPA CON LA BICICLETA
+            double tiempoCarrera = bicicleta.calcularTiempo(etapa.getValorDistancia(), velocidadBicicleta); // CALCULO EL TIEMPO QUE TARDARÁ EL CICLISTA CON LA BICICLETA PARA ESA ETAPA
         
-        actualizarEnergia(etapa); //CON EL TIEMPO DE LA ETAPA, CALCULO Y ACTUALIZO LA ENERGIA DEL CICLISTA
-        actualizarAbandono();
+            actualizarEnergia(etapa); //CON EL TIEMPO DE LA ETAPA, CALCULO Y ACTUALIZO LA ENERGIA DEL CICLISTA
+            actualizarAbandono();
         
-        if (!this.abandonado){ // NO HA ABANDONADO
-            resultados.add(new Resultado(tiempoCarrera, etapa)); // AÑADO UN NUEVO RESULTADO AL ARRAY
+            if (!this.abandonado){ // NO HA ABANDONADO
+                resultados.add(new Resultado(tiempoCarrera, etapa)); // AÑADO UN NUEVO RESULTADO AL ARRAY
+            }
+            else{
+                resultados.add(new Resultado(this.energia, etapa)); // SE HA QUEDADO SIN ENERGIA, INSERTAMOS EL TIEMPO NEGATIVO EN EL ARRAY RESULTADOS
+            }
+        }  
+    }
+    
+    public boolean equals(Object objeto) {
+        if (this == objeto) {
+            return true;
         }
-        else{
-            resultados.add(new Resultado(this.energia, etapa)); // SE HA QUEDADO SIN ENERGIA, INSERTAMOS EL TIEMPO NEGATIVO EN EL ARRAY RESULTADOS
+        if (objeto == null || getClass() != objeto.getClass()) {
+            return false;
         }
-    }   
+        Ciclista ciclista = (Ciclista) objeto;
+        return Double.compare(ciclista.energia, energia) == 0 && abandonado == ciclista.abandonado && Objects.equals(nombre, ciclista.nombre) && Objects.equals(habilidad, ciclista.habilidad) && Objects.equals(etapa, ciclista.etapa) && Objects.equals(equipo, ciclista.equipo) && Objects.equals(bicicleta, ciclista.bicicleta) && Objects.equals(resultados, ciclista.resultados);
+    }
+    
+    public int hashCode() {
+        return Objects.hash(nombre, habilidad, energia, abandonado, etapa, equipo, bicicleta, resultados);
+    }
 }

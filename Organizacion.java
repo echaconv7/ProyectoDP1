@@ -34,6 +34,7 @@ public class Organizacion
         ciclistasCarrera = new ArrayList<Ciclista>();
         ciclistasAbandonados = new ArrayList<Ciclista>();
         etapas = new TreeSet <Etapa> (new ComparadorDificultadEtapa());
+        listaDeEtapas= new ArrayList<Etapa>();
         
         
         //INIT COMPARATOR:
@@ -49,7 +50,7 @@ public class Organizacion
      * 
      */    
     public void gestionarCampeonato(){
-        //ordenarEtapas();
+        ordenarEtapas();
         mostrarEtapas();
         
         mostrarEquipos();
@@ -124,11 +125,9 @@ public class Organizacion
      * 
      * @return ArrayList<Etapa> 
      */
-    //private void ordenarEtapas(){
-        //etapas.addAll(listaDeEtapas);
-       // if(etapas!=null)
-         //   listaDeEtapas = new ArrayList<Etapa>(etapas);
-    //}
+    private void ordenarEtapas(){
+        listaDeEtapas.addAll(etapas);
+    }
     
     //SALIDA POR PANTALLA:
     /**
@@ -167,15 +166,14 @@ public class Organizacion
      * Muestra todos los detalles de las diferentes carreras que se realizan, nombre de la etapa, ciclistas que participarán, posiciones tras la carrera, abandonados en cada carrera
      */
     private void mostrarCarreras(){
-        Integer[] array = etapas.toArray(new Integer[etapas.size()]);
         for(int i = 0; i<etapas.size(); i++){
             System.out.println();
             anadirCiclistaCarrera();
             System.out.println("********************************************************************************************************");
-            System.out.println("*** CARRERA<"+ (i+1) + "> EN <etapa:"+ etapas.get(i).getNombre() + "> <dificultad: " + etapas.get(i).getDificultad() + "> <distancia: " + etapas.get(i).getDistancia()+")> ***");   
+            System.out.println("*** CARRERA<"+ (i+1) + "> EN <etapa:"+ listaDeEtapas.get(i).getNombre() + "> <dificultad: " + listaDeEtapas.get(i).getDificultad() + "> <distancia: " + listaDeEtapas.get(i).getDistancia()+")> ***");   
             System.out.println("********************************************************************************************************");
             System.out.println("********************************************************************************************************");
-            System.out.println("******************************** Ciclistas que van a competir en " + etapas.get(i).getNombre() + " *******************************");
+            System.out.println("******************************** Ciclistas que van a competir en " + listaDeEtapas.get(i).getNombre() + " *******************************");
             System.out.println("**********************************************************************************************************");
             Collections.sort(ciclistasCarrera, Collections.reverseOrder(comparadorTiempoTotalCiclista));
             for(Ciclista ciclista :ciclistasCarrera){
@@ -183,7 +181,7 @@ public class Organizacion
             }
             
             System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
-            System.out.println("+++++++++++++++++++++++++ Comienza la carrera en " + etapas.get(i).getNombre() + " ++++++++++++++++++++++++++");
+            System.out.println("+++++++++++++++++++++++++ Comienza la carrera en " + listaDeEtapas.get(i).getNombre() + " ++++++++++++++++++++++++++");
             System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
             
             
