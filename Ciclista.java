@@ -237,7 +237,7 @@ public class Ciclista
      */
     public Etapa obtenerEtapaAbandonado(){
         if(getAbandonado() == true){
-            return this.resultados.get(resultados.size()).getEtapa();
+            return this.resultados.get(resultados.size()-1).getEtapa();
         }
         else return null;
     }

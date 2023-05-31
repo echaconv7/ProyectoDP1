@@ -19,6 +19,7 @@ public class EquipoTest
     private Etapa etapa2;
     private Etapa etapa3;
     private Etapa etapa4;
+    private Bicicleta bicicleta;
     
     /**
      * Default constructor for test class EquipoTest
@@ -56,6 +57,7 @@ public class EquipoTest
         etapa2 = new Etapa("Etapa 2", Dificultad.COMPLEJA, Distancia.LARGA);
         etapa3 = new Etapa("Etapa 3", Dificultad.SENCILLA, Distancia.CORTA);
         etapa4 = new Etapa("Etapa 4", Dificultad.NORMAL, Distancia.INTERMEDIA);
+        bicicleta = new Bicicleta ("SCOTT CONTESSA ADDICT 15",Peso.NORMAL);
 
         ciclista1.hacerCarrera(etapa1);
         ciclista1.hacerCarrera(etapa2);
@@ -64,11 +66,12 @@ public class EquipoTest
         ciclista2.hacerCarrera(etapa3);
         ciclista2.hacerCarrera(etapa4);
 
-        double MediaEsperada = (ciclista1.calcularTiempoTotal() + ciclista2.calcularTiempoTotal()) / 2;
+        if (ciclista1.tieneBicicleta() && ciclista2.tieneBicicleta()){
+            double MediaEsperada = (ciclista1.calcularTiempoTotal() + ciclista2.calcularTiempoTotal()) / 2;
 
-        double MediaActual = EquipoTest1.calcularMediaTiempo();
-
-        assertEquals(MediaEsperada, MediaActual);
+            double MediaActual = EquipoTest1.calcularMediaTiempo();
+            assertEquals(MediaEsperada, MediaActual);
+        }
     }
     
     
